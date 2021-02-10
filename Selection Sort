@@ -1,0 +1,27 @@
+  #include<stdio.h>
+int main()
+{
+    int array[100];
+    int min,i,n,j;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        min=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(array[j]<array[min])
+                min=j;
+        }
+        int temp=array[i];
+        array[i]=array[min];
+        array[min]=temp;
+    }
+    for(i=0;i<n;i++)
+    {
+        printf(" %d ",array[i]);
+    }
+}
